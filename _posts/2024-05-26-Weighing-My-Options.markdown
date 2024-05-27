@@ -18,7 +18,7 @@ Our project focuses on enhancing robotic grasping and carrying abilities by leve
 
 Here is a simple illustration of the cube.
 
-![cube](../_images/cube.png)
+![cube](cube.png)
 
 
 For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
