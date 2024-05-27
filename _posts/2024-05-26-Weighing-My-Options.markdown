@@ -31,6 +31,14 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 <!-- ![cube](CubeMassDistribution.png) -->
 
+<div style="text-align: center;">
+    <img src="CubeMassDistribution.png" alt="cube" width="300">
+</div>
+
+<div style="text-align: center;">
+    <img src="BalanceBox.png" alt="cube" width="300">
+</div>
+
 <div style="display: flex; justify-content: center;">
     <div style="flex: 1; text-align: center;">
         <img src="CubeMassDistribution.png" alt="CMD" style="max-width: 100%; height: auto;">
