@@ -14,6 +14,8 @@ Our project focuses on enhancing robotic grasping and carrying abilities by leve
 
 **Our Approach**
 
+***Reward engineering***
+
 **Experimental Environment**
 
 Here is a simple illustration of the cube.
