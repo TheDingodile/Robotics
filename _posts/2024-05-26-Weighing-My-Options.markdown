@@ -23,7 +23,7 @@ Our project focuses on enhancing robotic grasping and carrying abilities by leve
 Here is an image from the simulation.
 
 <div style="text-align: center;">
-    <img src="initial_state.png" alt="cube" width="400">
+    <img src="initial_state.png" alt="cube" width="300">
 </div>
 
 
