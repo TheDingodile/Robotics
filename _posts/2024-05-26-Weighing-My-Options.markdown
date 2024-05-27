@@ -5,26 +5,40 @@ date:   2024-05-26 23:12:58 +0900
 categories: jekyll update
 permalink: /Weighing-My-Options.html
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+**Introduction**
 
-`YEAR-MONTH-DAY-title.MARKUP`
+In robotics, the state of the environment is typically represented by what is visible. However, this approach can miss key environmental aspects, such as the mass distribution of objects, which is crucial for effective interaction. When humans grasp and carry objects, they naturally infer information about the mass distribution and adapt their grip to minimize torque, maximize stability, and ensure a successful grasp. Simply grasping at the volumetric center of a box is not sufficient; robots need to understand mass distribution to perform these tasks effectively.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors (visual and haptic) to gather information about an object's mass-distribution. Our project explores these methods to enhance robotic perception, enabling robots to better understand and manipulate objects in a more human-like manner.
 
-Jekyll also offers powerful support for code snippets:
+**Our Approach**
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+**Experimental Environment**
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+**Results**
+
+it went well (i hope)
+
+**Conclusion**
+
+Nice job
+
+
+**References**
+
+- [Pybullet](https://pybullet.org/)
+
+- [MyGym](https://mygym.readthedocs.io/en/latest/)
+
+```
+
+
+
+
+
+
+
+
