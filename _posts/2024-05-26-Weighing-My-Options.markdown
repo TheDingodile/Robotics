@@ -20,7 +20,6 @@ Here is a simple illustration of the cube.
 
 ![cube](cube.png)
 
-<iframe src="cube3.pdf" width="100%" height="500px"></iframe>
 
 
 For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
