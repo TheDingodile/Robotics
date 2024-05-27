@@ -31,6 +31,9 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 <!-- ![cube](CubeMassDistribution.png) -->
 
+![TheCube](TheCube.png)
+
+
 <div style="text-align: center;">
     <img src="CubeMassDistribution.png" alt="cube" width="300">
 </div>
