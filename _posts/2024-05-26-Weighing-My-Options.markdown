@@ -24,6 +24,7 @@ Here is an image from the simulation.
 
 <div style="text-align: center;">
     <img src="initial_state.png" alt="cube" width="300">
+    <p style="font-style: italic; font-size: 0.8em;">Initial state of the environment. The goal is for the robot arm to grab the green cube, and put in on top of the black pole such that the cube is balanced.</p>
 </div>
 
 
@@ -32,8 +33,9 @@ Here is a simple illustration of the mass-distribution of the cube.
 <!-- ![cube](CubeMassDistribution.png) -->
 
 ![TheCube](TheCube.png)
+*The cube is broken down into 27 smaller cubes, where the mass of one of the cubes is higher than the rest. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the heavy part is and move that part towards the middle*
 
-
+<!-- 
 <div style="text-align: center;">
     <img src="CubeMassDistribution.png" alt="cube" width="300">
 </div>
@@ -51,7 +53,7 @@ Here is a simple illustration of the mass-distribution of the cube.
         <img src="BalanceBox.png" alt="Balance" style="max-width: 100%; height: auto;">
         <p style="font-size: 0.8em;">Balance Box</p>
     </div>
-</div>
+</div> -->
 
 
 
