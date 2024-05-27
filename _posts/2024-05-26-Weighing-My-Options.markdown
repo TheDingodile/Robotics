@@ -22,15 +22,16 @@ Our project focuses on enhancing robotic grasping and carrying abilities by leve
 
 Here is an image from the simulation.
 
-![cube](initial_state.png)
+<img src="initial_state.png" alt="cube" width="400">
+
 
 Here is a simple illustration of the mass-distribution of the cube.
 
 ![cube](CubeMassDistribution.png)
 
 <div style="display: flex;">
-    <img src="CubeMassDistribution.png" alt="Image 1" style="width: 45%; margin-right: 10px;">
-    <img src="CubeMassDistribution.png" alt="Image 2" style="width: 45%;">
+    <img src="CubeMassDistribution.png" alt="CMD" style="width: 45%; margin-right: 10px;">
+    <img src="BalanceBox.png" alt="Balance" style="width: 45%;">
 </div>
 
 
