@@ -19,6 +19,7 @@ Our project focuses on enhancing robotic grasping and carrying abilities by leve
 Here is a simple illustration of the cube.
 
 ![cube](cube.png)
+![cube2](cube2.png)
 
 
 
