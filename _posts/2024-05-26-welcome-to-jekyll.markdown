@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Weighing-My-Options"
+title:  "Welcome-to-jekyll"
 date:   2024-05-26 23:12:58 +0900
 categories: jekyll update
 ---
