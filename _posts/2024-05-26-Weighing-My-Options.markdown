@@ -32,7 +32,7 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 <!-- ![cube](CubeMassDistribution.png) -->
 
-![TheCube](TheCube.png)
+![TheCube](BalanceCube.png)
 *The cube is broken down into 27 smaller cubes, where the mass of one of the cubes is higher than the rest. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the heavy part is and move that part towards the middle*
 
 <!-- 
