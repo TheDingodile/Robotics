@@ -28,7 +28,10 @@ $$
 \pi(s \mid a)
 $$
 
-\[ s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, v_{x_{\text{box}}}, v_{y_{\text{box}}}, v_{z_{\text{box}}}, v_{x_{\text{arm}}}, v_{y_{\text{arm}}}, v_{z_{\text{arm}}}) \]
+$$
+s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, v_{x_{\text{box}}}, v_{y_{\text{box}}}, v_{z_{\text{box}}}, v_{x_{\text{arm}}}, v_{y_{\text{arm}}}, v_{z_{\text{arm}}})
+$$
+
 
 Due to the COM not being visible, the Markov property is not satisfied.
 
