@@ -20,11 +20,11 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 </div>
 
-## Methods
+**Methods**
 
-### Reinforcement Learning
+***Reinforcement Learning***
 
-The reinforcement learning problem is defined by a Markov Decision Process (MDP), which consists of:
+We can model the problem of balancing the cube on the pole as a reinforcement learning problem. The reinforcement learning problem is defined by a Markov Decision Process (MDP), which consists of:
 
 - A set of states $$ S $$
 - A set of actions $$ A $$
@@ -38,22 +38,39 @@ $$
 \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]
 $$
 
-Reward in our case, sub-goals in our case
+
+
+The Markov property is assumed for an MDP, which formally mean the current state contains all the information needed to make a decision. Formally we have that:
+
+$$
+P(s_{t+1} \mid s_t, a_t) = P(s_{t+1} \mid s_t, a_t, s_{t-1}, a_{t-1}, \ldots)
+$$
+
+***Policy Proximal Optimisation (PPO)***
+
+For training the agent we opt to use PPO. This is a simple state-of-the-art policy gradient method that is widely used, and easy to implement. The objective function is:
+
+$$
+L^{\text{CLIP}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right]
+$$
+
+where
+- $$ r_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$ is the probability ratio,
+- $$ \hat{A}_t $$ is the estimated advantage at time $$ t $$,
+- $$ \epsilon $$ is a hyperparameter that controls the clipping range.
+
+
 
 *State Representation*
 
 The state is represented by a high-level description of our environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
 
 $$
-\pi(s \mid a)
-$$
-
-$$
 s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, v_{x_{\text{box}}}, v_{y_{\text{box}}}, v_{z_{\text{box}}}, v_{x_{\text{arm}}}, v_{y_{\text{arm}}}, v_{z_{\text{arm}}})
 $$
 
 
-Due to the Center of mass (COM) of the box not being visible a part of this definition, and how the COM impacts the best way to balance the cube, the Markov property is insufficiently satisfied by this state definition.
+Due to the Center of mass (COM) of the box not being visible a part of this definition, and how the COM impacts the best way to balance the cube, this state definition is suspected to be under-represented. Specifically, the Markov property is likely insufficiently satisfied for this state definition.
 
 Therefore, we introduce an augmented state where we include the COM of the object, described by it's relative position to the object's center. This is given by:
 
@@ -63,9 +80,6 @@ $$
 
 We intent to figure out whether we can train a model to predict the COM of the object, and how this can be used to improve the robot's ability to balance the cube on the pole. In particular, we want to investigate whether such an approach of calculating and utilizing the COM is more effective than having a network that deals with the non-markovian states by using the trajectory history as modelled by a LSTM.
 
-
-
-*PPO*
 
 *Network architectures*
 
