@@ -8,11 +8,11 @@ permalink: /Weighing-My-Options.html
 
 **Introduction**
 
-In robotics, the state of the environment is typically represented by what is visible. However, this approach can miss key environmental aspects, such as the mass distribution of objects, which is crucial for effective interaction. When humans grasp and carry objects, they naturally infer information about the mass distribution and adapt their grip to minimize torque, maximize stability, and ensure a successful grasp. Simply grasping at the volumetric center of a box is not sufficient; robots need to understand mass distribution to perform these tasks effectively.
+In robotics, the state of the environment is typically represented by visually present features. However, this approach can miss key environmental aspects, such as the mass distribution of objects, which is crucial for effective interaction. When humans grasp and carry objects, they naturally infer information about the mass distribution and adapt their grip to minimize torque, maximize stability, and ensure a successful grasp. Simply grasping at the volumetric center of a box is not sufficient; robots need to understand mass distribution to perform these tasks effectively.
 
 Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's mass-distribution. Our project explores these methods to enhance robot learning, enabling robots to better understand and manipulate objects.
 
-To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. Below is a visualisation of the environment we tested our methods in, and the challenge that the robot must overcome.
+To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. Below is a visualisation of the environment we tested our methods in.
 
 <div style="text-align: center;">
     <img src="BalanceCube.png" alt="The Cube" width="500">
@@ -20,15 +20,22 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 </div>
 
+**Preliminaries**
+
+The state is represented by a high-level description of our environment. It is described by the 3D position of the box, robot arm, and their respective velocities (check if this is correct).
+
+Due to the COM not being visible, the Markov property is not satisfied.
+
 **Our Approach**
 
-We propose two ways directions to tackle this problem:
+We propose two directions to tackle this problem:
 
 *Modularized Dual-network structure*
 
 The first idea is to train two seperate networks: an observation network and a policy networks. 
 
-T
+
+
 
 First we define a
 
