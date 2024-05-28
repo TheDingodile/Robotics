@@ -12,23 +12,23 @@ In robotics, the state of the environment is typically represented by what is vi
 
 Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's mass-distribution. Our project explores these methods to enhance robot learning, enabling robots to better understand and manipulate objects.
 
-To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. The cube's center of mass is randomly sampled from inside the cube, and the robot must make use of this information in order to balance the cube on the pole.
-
-Below is a simple illustration of the setup and goal of our implementation.
+To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. Below is a visualisation of the environment we tested our methods in, and the challenge that the robot must overcome.
 
 <div style="text-align: center;">
     <img src="BalanceCube.png" alt="The Cube" width="500">
-    <p style="font-style: italic; font-size: 0.8em;">The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole.</p>
+    <p style="font-style: italic; font-size: 0.8em;">The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (eg. from playing around with the cube) where the COM is and move that part towards the middle of the pole.</p>
 
 </div>
 
 **Our Approach**
 
-We propose two ways to tackle this problem:
+We propose two ways directions to tackle this problem:
 
-**Modularized Dual-network structure**
+*Modularized Dual-network structure*
 
-We propose a modularized dual-network structure that consists of two networks: an observation network and a policy networks. 
+The first idea is to train two seperate networks: an observation network and a policy networks. 
+
+T
 
 First we define a
 
