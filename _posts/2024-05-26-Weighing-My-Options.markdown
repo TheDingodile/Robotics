@@ -24,6 +24,21 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 *Reinforcement learning*
 
+
+THE reinforcement learning problem is defined by a (MDP), which consists of:
+
+- A set of states \( S \)
+- A set of actions \( A \)
+- A transition function \( P(s' \mid s, a) \)
+- A reward function \( R(s, a) \)
+- A discount factor \( \gamma \in [0, 1] \)
+
+The goal is to find a policy \( \pi(a \mid s) \) that maximizes the expected cumulative reward:
+
+$$
+\mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]
+$$
+
 *State Representation*
 
 The state is represented by a high-level description of our environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
@@ -43,6 +58,7 @@ Therefore, we introduce an augmented state where we include the COM of the objec
 
 $$
 s_{\text{COM}} = (s, x_{\text{COM}}, y_{\text{COM}}, z_{\text{COM}})
+$$
 
 We intent to figure out whether we can train a model to predict the COM of the object, and how this can be used to improve the robot's ability to balance the cube on the pole. In particular, we want to investigate whether such an approach of calculating and utilizing the COM is more effective than having a network that deals with the non-markovian states by using the trajectory history as modelled by a LSTM.
 
