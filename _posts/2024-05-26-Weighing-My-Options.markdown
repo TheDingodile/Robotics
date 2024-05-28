@@ -31,10 +31,13 @@ Here is an image from the simulation.
 Here is a simple illustration of the mass-distribution of the cube.
 
 <div style="text-align: center;">
-    <img src="BalanceCube.png" alt="The Cube" width="300">
+    <img src="BalanceCube.png" alt="The Cube" width="500">
     <p style="font-style: italic; font-size: 0.8em;">The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole.</p>
 
 </div>
+
+
+
 
 
 <!-- <img src="BalanceCube.png" alt="The Cube" width="600">
