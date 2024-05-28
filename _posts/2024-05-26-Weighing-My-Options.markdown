@@ -20,24 +20,25 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 </div>
 
-**Methods**
+## Methods
 
-*Reinforcement learning*
+### Reinforcement Learning
 
+The reinforcement learning problem is defined by a Markov Decision Process (MDP), which consists of:
 
-THE reinforcement learning problem is defined by a (MDP), which consists of:
+- A set of states $$ S $$
+- A set of actions $$ A $$
+- A transition function $$ P(s' \mid s, a) $$
+- A reward function $$ R(s, a) $$
+- A discount factor $$ \gamma \in [0, 1] $$
 
-- A set of states \( S \)
-- A set of actions \( A \)
-- A transition function \( P(s' \mid s, a) \)
-- A reward function \( R(s, a) \)
-- A discount factor \( \gamma \in [0, 1] \)
-
-The goal is to find a policy \( \pi(a \mid s) \) that maximizes the expected cumulative reward:
+The goal is to find a policy $$ \pi(a \mid s) $$ that maximizes the expected cumulative reward:
 
 $$
 \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]
 $$
+
+Reward in our case, sub-goals in our case
 
 *State Representation*
 
