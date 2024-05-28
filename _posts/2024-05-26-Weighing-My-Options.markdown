@@ -73,6 +73,22 @@ We aimed for 3 main objectives in our environment:
 - Challenging enough to require mass-distribution information for solving
 - Suitable to evaluate the effectiveness of our approach
 
+We settled on the task of balancing a cube on a pole. The cube has a randomly sampled center of mass (COM) from inside the cube. To solve the task everytime, the agent has to figure out where the COM is and move that part towards the middle of the pole to balance the cube. The agent controls a robot arm to grasp and carry the cube.
+
+The framework used is [MyGym](https://mygym.readthedocs.io/en/latest/) which is built on top of Pybullet. This framework provides a simple interface for creating custom environments and training agents.
+
+***Reward engineering***
+
+MyGym comes with defaults reward functions which are designed to speed up training. In addition, we split the task into sub-tasks to guide the agent towards the final goal. The sub-tasks are:
+
+- Grasp the cube
+- Lift the cube
+- Drop the cube on the ground (we explain this sub-task later)
+- Drop the cube on the pole
+
+**(check if this is correct)**
+
+
 
 **Methods**
 
