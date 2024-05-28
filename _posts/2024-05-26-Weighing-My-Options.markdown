@@ -152,34 +152,51 @@ $$
 where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss.
 **(check if this is correct)**
 
-The idea is that the LSTM can learn the trajectory history of the object, and use this to predict the COM. Then the hope is that due to enforcing the LSTM to pick up on the COM, the policy head will learn to use this information.
+The idea is that the LSTM can learn the trajectory history of the object, and use this to predict the COM. Then the hope is that due to enforcing the LSTM to pick up on the COM, the policy learn to use this information.
 
 Below is a visualisation of the network architecture.
 
 <div style="text-align: center;">
     <img src="BackBone.png" alt="The Cube" width="500">
     <p style="font-style: italic; font-size: 0.8em;">The network architecture of the Backbone Network approach. The policy-head outputs a 3-dimensional vector, the value-head outputs a single value, and the COM-head outputs a 3-dimensional vector also.</p>
-
 </div>
 
 
 
 ***Approach 2: Dual-network structure***
 
-The policy is first given the subtask to lift up the cube and drop it.
+In contrast to approach 1, this is a modular approach, where we intent to approximate the augmented state $$ s_{\text{COM}} $$, and then feed it to the PPO network.
 
-The perception network is responsible for extracting information about the mass distribution of the object, while the control network is responsible for generating the robot's actions. The perception network takes in sensor data and outputs a representation of the object's mass distribution. The control network then uses this representation to generate actions that are more effective at grasping and carrying the object.
+If we have access to such augmented state, our state would closer approximate the Markov property, and we therefore hypothesise that we don't need an LSTM for the actor-critic network. Thus, instead, we can use a simple feed-forward network to approximate the policy and value functions. 
 
+The COM prediction network is trained separately. In particular, we introduce a special sub-task (of picking up and dropping the box) to train the COM prediction network. The policy is first given this sub-task to lift up the cube and drop it. After this sub-task is completed, the COM predictor is given the trajectory of the sub-task as input and the COM as target. We use an LSTM for the COM prediction network. The hope is that the trajectory reveals information about the COM, and that the LSTM can pick up on this.
 
+For the special (lift and drop) sub-task, when the COM network has not made a prediction yet, we set the COM to the center of the box. However, when the COM network has made a prediction, we fix the COM to the predicted value for the rest of that trajectory. This way, the policy network can learn to use the COM information.
 
 
 Below is a visualisation of the network architecture.
+
+<div style="text-align: center;">
+    <img src="Dual-Network.png" alt="The Cube" width="500">
+    <p style="font-style: italic; font-size: 0.8em;">The network architecture of the Dual-network approach. The COM-head outputs a 3-dimensional vector which is concatinated to the state and given to the actor-critic network.</p>
+</div>
 
 **Experiments**
 
 **Results**
 
 it went well (i hope)
+
+**Future work & limitations**
+
+Could feed the COM loss as reward. 
+
+Could predict for every frame.
+
+Could use a more complex environment.
+
+Could remove the sub-tasks.
+
 
 **Conclusion**
 
