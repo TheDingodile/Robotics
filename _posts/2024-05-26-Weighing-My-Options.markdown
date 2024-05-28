@@ -187,25 +187,25 @@ Below is a visualisation of the network architecture.
 
 it went well (i hope)
 
-### Limitations and Future Work
+**Limitations and Future Work**
 
 Our work has several limitations and directions for future research:
 
-1. **Approach 1:**
+1. ***Approach 1:***
    - In approach 1, we encourage the network to attend to the Center of Mass (COM) based on its trajectory rather than actively exploring it.
-   - **Recommendation:** One extension could involve adding a reward for reducing COM prediction error. This would incentivize the policy to explore states that provide valuable information about the COM, potentially improving its ability to balance the cube.
+   - ***Recommendation:*** One extension could involve adding a reward for reducing COM prediction error. This would incentivize the policy to explore states that provide valuable information about the COM, potentially improving its ability to balance the cube.
 
-2. **Approach 2:**
+2. ***Approach 2:***
    - Approach 2 fixes the COM after prediction, without allowing the COM network to predict at each timestep.
-   - **Recommendation:** To enhance interaction and training, a future extension could involve having the COM network predict the COM dynamically at each timestep. This could lead to a more adaptive policy and better handling of COM variations during balancing.
+   - ***Recommendation:*** To enhance interaction and training, a future extension could involve having the COM network predict the COM dynamically at each timestep. This could lead to a more adaptive policy and better handling of COM variations during balancing.
 
-3. **Environmental Complexity:**
+3. ***Environmental Complexity:***
    - The current environment is relatively simple.
-   - **Recommendation:** Future work should evaluate our methods in more complex environments to assess their robustness and scalability.
+   - ***Recommendation:*** Future work should evaluate our methods in more complex environments to assess their robustness and scalability.
 
-4. **Task Specificity:**
+4. ***Task Specificity:***
    - Our sub-tasks are domain-specific and may not generalize well to other tasks.
-   - **Recommendation:** Exploring ways to generalize the learning of COM to more diverse tasks could enhance the applicability and utility of our approach.
+   - ***Recommendation:*** Exploring ways to generalize the learning of COM to more diverse tasks could enhance the applicability and utility of our approach.
 
 
 
