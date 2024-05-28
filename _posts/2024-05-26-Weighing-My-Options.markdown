@@ -22,7 +22,7 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 **Preliminaries**
 
-First we introduce some concepts that are important for our project.
+First we introduce some basic concepts that are used in our project.
 
 ***Reinforcement Learning***
 
@@ -77,6 +77,14 @@ We settled on the task of balancing a cube on a pole. The cube has a randomly sa
 
 The framework used is [MyGym](https://mygym.readthedocs.io/en/latest/) which is built on top of Pybullet. This framework provides a simple interface for creating custom environments and training agents.
 
+Here is an image from the simulation.
+
+<div style="text-align: center;">
+    <img src="initial_state.png" alt="cube" width="300">
+    <p style="font-style: italic; font-size: 0.8em;">Initial state of the environment. The goal is for the robot arm to grab the green cube, and put in on top of the black pole such that the cube is balanced.</p>
+</div>
+
+
 ***Reward engineering***
 
 MyGym comes with defaults reward functions which are designed to speed up training. In addition, we split the task into sub-tasks to guide the agent towards the final goal. The sub-tasks are:
@@ -88,20 +96,16 @@ MyGym comes with defaults reward functions which are designed to speed up traini
 
 **(check if this is correct)**
 
-
-
-**Methods**
-
 ***State Representation***
 
-The state is represented by a high-level description of our environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
+The state is represented by a high-level description of the environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
 
 $$
 s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, v_{x_{\text{box}}}, v_{y_{\text{box}}}, v_{z_{\text{box}}}, v_{x_{\text{arm}}}, v_{y_{\text{arm}}}, v_{z_{\text{arm}}})
 $$
 
 
-Due to the Center of mass (COM) of the box not being visible a part of this definition, and how the COM impacts the best way to balance the cube, this state definition is suspected to be under-represented. Specifically, the Markov property is likely insufficiently satisfied for this state definition.
+Due to the Center of mass (COM) of the box not being visible in this definition, this state definition is suspected to be under-represented. Specifically, the Markov property is likely insufficiently satisfied for this state definition, as the COM impacts the best way to balance the cube on the pole.
 
 Therefore, we introduce an augmented state where we include the COM of the object, described by it's relative position to the object's center. This is given by:
 
@@ -112,10 +116,11 @@ $$
 We intent to figure out whether we can train a model to predict the COM of the object, and how this can be used to improve the robot's ability to balance the cube on the pole. In particular, we want to investigate whether such an approach of calculating and utilizing the COM is more effective than having a network that deals with the non-markovian states by using the trajectory history as modelled by a LSTM.
 
 
+
+
+**Methods**
+
 *Network architectures*
-
-
-**Our Approach**
 
 We propose two directions to tackle this problem:
 
@@ -137,19 +142,7 @@ The perception network is responsible for extracting information about the mass 
 
 *Dual-network structure*
 
-*Reward engineering*
-
-**Experimental Environment**
-
-Here is an image from the simulation.
-
-<div style="text-align: center;">
-    <img src="initial_state.png" alt="cube" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">Initial state of the environment. The goal is for the robot arm to grab the green cube, and put in on top of the black pole such that the cube is balanced.</p>
-</div>
-
-
-For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
+**Experiments**
 
 **Results**
 
