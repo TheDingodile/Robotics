@@ -22,6 +22,8 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 **Preliminaries**
 
+First we introduce some concepts that are important for our project.
+
 ***Reinforcement Learning***
 
 We can model the problem of balancing the cube on the pole as a reinforcement learning problem. The reinforcement learning problem is defined by a Markov Decision Process (MDP), which consists of:
@@ -48,7 +50,7 @@ $$
 
 ***Policy Proximal Optimisation (PPO)***
 
-For training the agent we opt to use PPO. This is a simple state-of-the-art policy gradient method that is widely used, and easy to implement. The objective function is:
+For training our agents we opt to use PPO. This is a simple state-of-the-art policy gradient method that is widely used, and easy to implement. The objective function is:
 
 $$
 L^{\text{CLIP}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right]
@@ -58,6 +60,19 @@ where
 - $$ r_t(\theta) = \frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$ is the probability ratio,
 - $$ \hat{A}_t $$ is the estimated advantage at time $$ t $$,
 - $$ \epsilon $$ is a hyperparameter that controls the clipping range.
+
+To calculate the advantage estimates we need value head. This makes PPO an actor-critic method.
+
+**Environment**
+
+In this section we describe the environment in which our method is tested.
+
+We aimed for 3 main objectives in our environment:
+
+- Achievable for our agent within scope, compute, and time constraints
+- Challenging enough to require mass-distribution information for solving
+- Suitable to evaluate the effectiveness of our approach
+
 
 **Methods**
 
