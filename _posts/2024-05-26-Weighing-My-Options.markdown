@@ -32,7 +32,9 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 <!-- ![cube](CubeMassDistribution.png) -->
 
-![TheCube](BalanceCube.png){width=300px}
+<img src="BalanceCube.png" alt="The Cube" width="300">
+
+![TheCube](BalanceCube.png)
 *The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole*
 
 <!-- 
