@@ -36,39 +36,6 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 </div>
 
-
-
-
-
-<!-- <img src="BalanceCube.png" alt="The Cube" width="600">
-*The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole* -->
-
-
-<!-- ![TheCube](BalanceCube.png)
-*The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole* -->
-
-<!-- 
-<div style="text-align: center;">
-    <img src="CubeMassDistribution.png" alt="cube" width="300">
-</div>
-
-<div style="text-align: center;">
-    <img src="BalanceBox.png" alt="cube" width="300">
-</div>
-
-<div style="display: flex; justify-content: center;">
-    <div style="flex: 1; text-align: center;">
-        <img src="CubeMassDistribution.png" alt="CMD" style="max-width: 100%; height: auto;">
-        <p style="font-size: 0.8em;">Cube Mass Distribution</p>
-    </div>
-    <div style="flex: 1; text-align: center;">
-        <img src="BalanceBox.png" alt="Balance" style="max-width: 100%; height: auto;">
-        <p style="font-size: 0.8em;">Balance Box</p>
-    </div>
-</div> -->
-
-
-
 For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
 
 **Results**
