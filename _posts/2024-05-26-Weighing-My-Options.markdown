@@ -93,6 +93,7 @@ MyGym comes with defaults reward functions which are designed to speed up traini
 - Lift the cube
 - Drop the cube on the ground (we explain this sub-task later)
 - Drop the cube on the pole
+- Balance the cube on the pole
 
 **(check if this is correct)**
 
@@ -115,23 +116,43 @@ $$
 
 We intent to figure out whether we can train a model to predict the COM of the object, and how this can be used to improve the robot's ability to balance the cube on the pole. In particular, we want to investigate whether such an approach of calculating and utilizing the COM is more effective than having a network that deals with the non-markovian states by using the trajectory history as modelled by a LSTM.
 
+***Action space***
+
+The action space is a 3D continuous space, where the robot arm can move in the x, y, and z directions. The action space is defined as:
+
+$$
+a = (x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}})
+$$
+
+An under-the-hood control system is used to convert these actions into the robot arm's movements. Using this approach, the agent can focus on learning the high-level task of balancing the cube on the pole, rather than the low-level control of the robot arm.
+
 
 
 
 **Methods**
 
-*Network architectures*
 
-We propose two directions to tackle this problem:
+We propose two directions to tackle this problem, which will be compared in our experiments:
 
-*Modularized Dual-network structure*
+***Approach 1: Backbone network***
 
-The first idea is to train two seperate networks: an observation network and a policy networks. 
+The first idea is to have an LSTM backbone network with a policy head, a value head, and a COM head. The value head is used to do the PPO updates of the policy head, while the COM head simply is used to predict the COM of the object with MSE loss at each timestep. We introduce a weight to the loss of the COM head, to balance the importance of the different losses, formally we have:
+
+$$
+L = L^{\text{CLIP}} + \lambda L^{\text{MSE}}
+$$
+
+
+where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss.
+**(check if this is correct)**
+
+The idea is that the LSTM can learn the trajectory history of the object, and use this to predict the COM. Then the hope is that due to enforcing the LSTM to pick up on the COM, the policy head will learn to use this information.
+
+Below is a visualisation of the network architecture.
 
 
 
-
-First we define a
+***Approach 2: Dual-network structure***
 
 The policy is first given the subtask to lift up the cube and drop it.
 
@@ -140,7 +161,7 @@ The perception network is responsible for extracting information about the mass 
 
 
 
-*Dual-network structure*
+Below is a visualisation of the network architecture.
 
 **Experiments**
 
