@@ -32,8 +32,8 @@ Here is a simple illustration of the mass-distribution of the cube.
 
 <!-- ![cube](CubeMassDistribution.png) -->
 
-![TheCube](BalanceCube.png)
-*The cube is broken down into 27 smaller cubes, where the mass of one of the cubes is higher than the rest. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the heavy part is and move that part towards the middle*
+![TheCube](BalanceCube.png){width=300px}
+*The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole*
 
 <!-- 
 <div style="text-align: center;">
