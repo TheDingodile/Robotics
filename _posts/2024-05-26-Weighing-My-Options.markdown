@@ -12,7 +12,7 @@ In robotics, the state of the environment is typically represented by visually p
 
 Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's mass-distribution. Our project explores these methods to enhance robot learning, enabling robots to better understand and manipulate objects.
 
-To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. Below is a visualisation of the environment we tested our methods in.
+To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. Below is a visualisation of this situation.
 
 <div style="text-align: center;">
     <img src="BalanceCube.png" alt="The Cube" width="500">
@@ -22,7 +22,7 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 **Preliminaries**
 
-The state is represented by a high-level description of our environment. It is described by the 3D position of the box, robot arm, and their respective velocities (check if this is correct). Formally, we have:
+The state is represented by a high-level description of our environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
 
 $$
 \pi(s \mid a)
@@ -33,7 +33,15 @@ s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{ar
 $$
 
 
-Due to the COM not being visible, the Markov property is not satisfied.
+Due to the Center of mass (COM) of the box not being visible a part of this definition, and how the COM impacts the best way to balance the cube, the Markov property is insufficiently satisfied by this state definition.
+
+Therefore, we introduce an augmented state where we include the COM of the object, described by it's relative position to the object's center. This is given by:
+
+$$
+s_{\text{COM}} = (s, x_{\text{COM}}, y_{\text{COM}}, z_{\text{COM}})
+
+We intent to figure out whether we can train a model to predict the COM of the object, and how this can be used to improve the robot's ability to balance the cube on the pole. In particular, we want to investigate whether such an approach of calculating and utilizing the COM is more effective than having a network that deals with the non-markovian states by using the trajectory history as modelled by a LSTM.
+
 
 **Our Approach**
 
