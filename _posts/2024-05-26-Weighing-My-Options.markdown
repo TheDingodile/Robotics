@@ -20,7 +20,7 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 </div>
 
-**Methods**
+**Preliminaries**
 
 ***Reinforcement Learning***
 
@@ -59,9 +59,9 @@ where
 - $$ \hat{A}_t $$ is the estimated advantage at time $$ t $$,
 - $$ \epsilon $$ is a hyperparameter that controls the clipping range.
 
+**Methods**
 
-
-*State Representation*
+***State Representation***
 
 The state is represented by a high-level description of our environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
 
