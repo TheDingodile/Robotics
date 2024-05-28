@@ -22,7 +22,11 @@ To test our method we created a simulation in [Pybullet](https://pybullet.org/),
 
 **Preliminaries**
 
-The state is represented by a high-level description of our environment. It is described by the 3D position of the box, robot arm, and their respective velocities (check if this is correct).
+The state is represented by a high-level description of our environment. It is described by the 3D position of the box, robot arm, and their respective velocities (check if this is correct). Formally, we have:
+
+\[
+s = (x_{box}, y_{box}, z_{box}, x_{arm}, y_{arm}, z_{arm}, v_{x_{box}}, v_{y_{box}}, v_{z_{box}}, v_{x_{arm}}, v_{y_{arm}}, v_{z_{arm}})
+\]
 
 Due to the COM not being visible, the Markov property is not satisfied.
 
