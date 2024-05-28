@@ -74,7 +74,7 @@ it went well (i hope)
 
 **Conclusion**
 
-Nice job
+Nice job :smile:
 
 
 **References**
