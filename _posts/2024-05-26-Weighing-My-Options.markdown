@@ -10,9 +10,34 @@ permalink: /Weighing-My-Options.html
 
 In robotics, the state of the environment is typically represented by what is visible. However, this approach can miss key environmental aspects, such as the mass distribution of objects, which is crucial for effective interaction. When humans grasp and carry objects, they naturally infer information about the mass distribution and adapt their grip to minimize torque, maximize stability, and ensure a successful grasp. Simply grasping at the volumetric center of a box is not sufficient; robots need to understand mass distribution to perform these tasks effectively.
 
-Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors (visual and haptic) to gather information about an object's mass-distribution. Our project explores these methods to enhance robot learning, enabling robots to better understand and manipulate objects.
+Our project focuses on enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's mass-distribution. Our project explores these methods to enhance robot learning, enabling robots to better understand and manipulate objects.
+
+To test our method we created a simulation in [Pybullet](https://pybullet.org/), where a robot arm must balance a cube on a pole. The cube's center of mass is randomly sampled from inside the cube, and the robot must make use of this information in order to balance the cube on the pole.
+
+Below is a simple illustration of the setup and goal of our implementation.
+
+<div style="text-align: center;">
+    <img src="BalanceCube.png" alt="The Cube" width="500">
+    <p style="font-style: italic; font-size: 0.8em;">The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole.</p>
+
+</div>
 
 **Our Approach**
+
+We propose two ways to tackle this problem:
+
+**Modularized Dual-network structure**
+
+We propose a modularized dual-network structure that consists of two networks: an observation network and a policy networks. 
+
+First we define a
+
+The policy is first given the subtask to lift up the cube and drop it.
+
+The perception network is responsible for extracting information about the mass distribution of the object, while the control network is responsible for generating the robot's actions. The perception network takes in sensor data and outputs a representation of the object's mass distribution. The control network then uses this representation to generate actions that are more effective at grasping and carrying the object.
+
+
+
 
 *Dual-network structure*
 
@@ -27,14 +52,6 @@ Here is an image from the simulation.
     <p style="font-style: italic; font-size: 0.8em;">Initial state of the environment. The goal is for the robot arm to grab the green cube, and put in on top of the black pole such that the cube is balanced.</p>
 </div>
 
-
-Here is a simple illustration of the mass-distribution of the cube.
-
-<div style="text-align: center;">
-    <img src="BalanceCube.png" alt="The Cube" width="500">
-    <p style="font-style: italic; font-size: 0.8em;">The Center of Mass (COM) is randomly sampled (uniformly) from inside the cube. This means to balance the cube on the pole it has to figure out (from playing around with the cube) where the COM is and move that part towards the middle of the pole.</p>
-
-</div>
 
 For testing our method we setup a simulation in [Pybullet](https://pybullet.org/). We use the framework given in [MyGym](https://mygym.readthedocs.io/en/latest/) for our setup...
 
