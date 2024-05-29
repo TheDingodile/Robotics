@@ -53,7 +53,7 @@ $$
 For training our agents we opt to use PPO. This is a simple state-of-the-art policy gradient method that is widely used, and easy to implement. The objective function is:
 
 $$
-L^{\text{CLIP}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right]
+L^{\text{Policy}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right]
 $$
 
 where
@@ -64,10 +64,10 @@ where
 To calculate the advantage estimates we use a value head. This makes PPO an actor-critic method. The value head is trained by simply minimizing the mean squared error between the predicted value and the return-to-go. Formally we have:
 
 $$
-L^{\text{MSE}} = \mathbb{E}_t \left[ (V_{\theta}(s_t) - R_t)^2 \right]
+L^{\text{Value}} = \mathbb{E}_t \left[ (V_{\theta}(s_t) - R_t)^2 \right]
 $$
 
-where
+where $$ R_t $$ is the return-to-go at time $$ t $$.
 
 **Environment**
 
@@ -151,12 +151,11 @@ We propose two directions to tackle this problem, which will be compared in our 
 The first idea is to have an LSTM backbone network with a policy head, a value head, and a COM head. The value head is used to do the PPO updates of the policy head, while the COM head simply is used to predict the COM of the object with MSE loss at each timestep. We introduce a weight to the loss of the COM head, to balance the importance of the different losses, formally we have:
 
 $$
-L = L^{\text{CLIP}} + \lambda L^{\text{MSE}}
+L = L^{\text{Policy}} + \lambda_{\text{Value}} L^{\text{Value}} + \lambda_{\text{COM}} L^{\text{COM}}
 $$
 
 
-where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss.
-**(check if this is correct)**
+where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss. In our experiments we use $$ \lambda_{\text{Value}} = 0.5 $$ and $$ \lambda_{\text{COM}} = 0.1
 
 The idea is that the LSTM can learn the trajectory history of the object, and use this to predict the COM. Then the hope is that due to enforcing the LSTM to pick up on the COM, the policy learn to use this information.
 
