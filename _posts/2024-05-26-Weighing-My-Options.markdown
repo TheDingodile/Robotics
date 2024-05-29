@@ -117,7 +117,7 @@ We work with a dense reward function, such that reward is given for each timeste
 The state is represented by a high-level description of the environment. It is described by the global 3D position of the box and robot arm, and a boolean indicating whether the gribber is closed or open. Formally, we have:
 
 $$
-s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, \text{gripper\_closed})
+s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, \text{gripper\{_closed\}})
 $$
 
 
