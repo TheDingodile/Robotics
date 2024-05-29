@@ -217,7 +217,14 @@ Here, we see the succesrate of the four different sub-tasks as training goes on.
 
 <div id="subtasks" style="text-align: center;">
     <img src="subtasks.png" alt="baseline" width="570">
-    <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
+    <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
+</div>
+
+This plot shows how the loss of the COM prediction network decreases as training goes on.
+
+<div id="loss" style="text-align: center;">
+    <img src="loses.png" alt="baseline" width="570">
+    <p style="font-style: italic; font-size: 0.8em;">The loss of the COM network. We see the loss is still falling significantly when we stop training.</p>
 </div>
 
 **Results**
