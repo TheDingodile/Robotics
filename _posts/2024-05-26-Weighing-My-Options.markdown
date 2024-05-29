@@ -235,7 +235,7 @@ This plot shows how the loss of the COM prediction network decreases as training
 
 **Discussion**
 
-The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline). Surprisingly, our two approaches did not perform better than the baseline, as was shown in reference1 and reference2. We speculate that the extra complexity added to the architecture by the COM prediction network might have made the training less data-efficient, which means we would have to train longer. Unfortunately, due to compute and time constraints, we were not able to test this hypothesis.
+The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline). Surprisingly, our two approaches did not perform better than the baseline, as was shown [here](#LSTM) and [here](#subtasks). We speculate that the extra complexity added to the architecture by the COM prediction network might have made the training less data-efficient, which means we would have to train longer. Unfortunately, due to compute and time constraints, we were not able to test this hypothesis.
 
 **Limitations and Future Work**
 
@@ -263,7 +263,7 @@ Our work has several limitations and directions for future research:
 
 **Conclusion**
 
-In this project we explored two methods for enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's center of mass. Our experiments showed that the proposed methods did not outperform the baseline model. We speculate that this is due to the added complexity of the COM prediction network, which may have made training less data-efficient. Future work should focus on addressing this limitation and evaluating our methods in more complex environments to assess their robustness and scalability.
+In this project we explored two methods for enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's center of mass (COM). Our experiments showed that the proposed methods did not outperform the baseline model of simply using a feedforward neural network with no history or other way to access the COM. We speculate that this is due to the added complexity of the COM prediction network, which may have made training less data-efficient. Future work should focus on addressing this limitation and evaluating our methods in more complex environments to assess their robustness and scalability.
 
 **References**
 
