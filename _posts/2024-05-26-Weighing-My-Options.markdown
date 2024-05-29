@@ -206,10 +206,14 @@ First we run a baseline model, that is a simple MLP network with a policy head a
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
 </div>
 
+Next, we show the performance for first approach, the Backbone network.
+
 <div id="LSTM" style="text-align: center;">
     <img src="LSTM.png" alt="baseline" width="600">
-    <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
+    <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance</p>
 </div>
+
+Here, we see the succesrate of the four different sub-tasks as training goes on.
 
 <div id="subtasks" style="text-align: center;">
     <img src="subtasks.png" alt="baseline" width="570">
