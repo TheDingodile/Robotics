@@ -61,7 +61,13 @@ where
 - $$ \hat{A}_t $$ is the estimated advantage at time $$ t $$,
 - $$ \epsilon $$ is a hyperparameter that controls the clipping range.
 
-To calculate the advantage estimates we need value head. This makes PPO an actor-critic method.
+To calculate the advantage estimates we use a value head. This makes PPO an actor-critic method. The value head is trained by simply minimizing the mean squared error between the predicted value and the return-to-go. Formally we have:
+
+$$
+L^{\text{MSE}} = \mathbb{E}_t \left[ (V_{\theta}(s_t) - R_t)^2 \right]
+$$
+
+where
 
 **Environment**
 
@@ -217,6 +223,8 @@ Nice job :smile: :happy:
 
 
 **References**
+
+- [Code](https://github.com/mschoene/myGym)
 
 - [Pybullet](https://pybullet.org/)
 
