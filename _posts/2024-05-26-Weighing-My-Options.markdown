@@ -173,7 +173,7 @@ The idea is that the LSTM can learn the trajectory history of the object, and us
 Below is a visualisation of the network architecture.
 
 <div style="text-align: center;">
-    <img src="BackBone.png" alt="The Cube" width="500">
+    <img src="BackBone_new.png" alt="The Cube" width="500">
     <p style="font-style: italic; font-size: 0.8em;">The network architecture of the Backbone Network approach. The policy-head outputs a 3-dimensional vector, the value-head outputs a single value, and the COM-head outputs a 3-dimensional vector also.</p>
 </div>
 
