@@ -208,7 +208,7 @@ First we run a baseline model, that is a simple MLP network with a policy head a
 
 **Results**
 
-The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline). 
+The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline). Surprisingly, our two approaches did not perform better than the baseline, as was shown in reference1 and reference2. We speculate that the extra complexity added to the architecture by the COM prediction network might have made the training less data-efficient, which means we would have to train longer. Unfortunately, due to time constraints, we were not able to test this hypothesis.
 
 **Limitations and Future Work**
 
