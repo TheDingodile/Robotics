@@ -151,11 +151,11 @@ We propose two directions to tackle this problem, which will be compared in our 
 The first idea is to have an LSTM backbone network with a policy head, a value head, and a COM head. The value head is used to do the PPO updates of the policy head, while the COM head simply is used to predict the COM of the object with MSE loss at each timestep. We introduce a weight to the loss of the COM head, to balance the importance of the different losses, formally we have:
 
 $$
-L = L^{\text{Policy}} + \lambda_{\text{Value}} L^{\text{Value}} + \lambda_{\text{COM}} L^{\text{COM}}
+L = L^{\text{Policy}} + \lambda_{1} L^{\text{Value}} + \lambda_{2} L^{\text{COM}}
 $$
 
 
-where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss. In our experiments we use $$ \lambda_{\text{Value}} = 0.5 $$ and $$ \lambda_{\text{COM}} = 0.1
+where $$ \lambda $$ is a hyperparameter that controls the importance of the COM loss. In our experiments we use $$ \lambda_{1} = 0.5 $$ and $$ \lambda_{2} = 0.1 $$
 
 The idea is that the LSTM can learn the trajectory history of the object, and use this to predict the COM. Then the hope is that due to enforcing the LSTM to pick up on the COM, the policy learn to use this information.
 
