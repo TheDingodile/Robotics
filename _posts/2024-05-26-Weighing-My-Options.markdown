@@ -222,18 +222,18 @@ Next, we show the performance for first approach, the Backbone network.
 Here, we see the succesrate of the four different sub-tasks as training goes on.
 
 <div id="subtasks" style="text-align: center;">
-    <img src="subtasks.png" alt="baseline" width="570">
+    <img src="subtasks.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
 </div>
 
 This plot shows how the loss of the COM prediction network decreases as training goes on.
 
 <div id="loss" style="text-align: center;">
-    <img src="loses.png" alt="baseline" width="570">
+    <img src="loses.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">The loss of the COM network. We see the loss is still falling significantly when we stop training.</p>
 </div>
 
-**Results**
+**Discussion**
 
 The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline). Surprisingly, our two approaches did not perform better than the baseline, as was shown in reference1 and reference2. We speculate that the extra complexity added to the architecture by the COM prediction network might have made the training less data-efficient, which means we would have to train longer. Unfortunately, due to compute and time constraints, we were not able to test this hypothesis.
 
