@@ -48,7 +48,7 @@ $$
 P(s_{t+1} \mid s_t, a_t) = P(s_{t+1} \mid s_t, a_t, s_{t-1}, a_{t-1}, \ldots)
 $$
 
-***Policy Proximal Optimisation (PPO)***
+***Proximal Policy Optimisation (PPO)***
 
 For training our agents we opt to use PPO. This is a simple state-of-the-art policy gradient method that is widely used, and easy to implement. The objective function is:
 
