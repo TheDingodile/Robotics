@@ -199,6 +199,8 @@ Below is a visualisation of the network architecture.
 
 **Experiments**
 
+***Results: baseline***
+
 First we run a baseline model, that is a simple MLP network with a policy head and a value head. This is to get a sense of the difficulty of the task, and to have a comparison point for our two approaches.
 
 <div id="baseline" style="text-align: center;">
@@ -206,12 +208,16 @@ First we run a baseline model, that is a simple MLP network with a policy head a
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
 </div>
 
+***Results: Approach 1***
+
 Next, we show the performance for first approach, the Backbone network.
 
 <div id="LSTM" style="text-align: center;">
     <img src="LSTM.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance</p>
 </div>
+
+***Results: Approach 2***
 
 Here, we see the succesrate of the four different sub-tasks as training goes on.
 
