@@ -205,7 +205,7 @@ First we run a baseline model, that is a simple MLP network with a policy head a
 
 <div id="baseline" style="text-align: center;">
     <img src="baseline.png" alt="baseline" width="520">
-    <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
+    <p style="font-style: italic; font-size: 0.8em;">Baseline performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. </p>
 </div>
 
 ***Results: Approach 1***
@@ -214,7 +214,7 @@ Next, we show the performance for first approach, the Backbone network.
 
 <div id="LSTM" style="text-align: center;">
     <img src="LSTM.png" alt="baseline" width="600">
-    <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance</p>
+    <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is significantly worse than that of the baseline model.</p>
 </div>
 
 ***Results: Approach 2***
