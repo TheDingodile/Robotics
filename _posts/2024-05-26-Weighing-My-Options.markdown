@@ -199,6 +199,8 @@ Below is a visualisation of the network architecture.
 
 **Experiments**
 
+First we run a baseline model, that is a simple MLP network with a policy head and a value head. This is to get a sense of the difficulty of the task, and to have a comparison point for our two approaches.
+
 <div id="baseline" style="text-align: center;">
     <img src="baseline.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
