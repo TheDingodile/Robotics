@@ -103,8 +103,8 @@ The pole is designed to be exactly half the width of the cube, which means by pl
 
 MyGym comes with defaults reward functions which are designed to speed up training. We use these default reward schemes, and add some customization. We split the task into sub-tasks to guide the agent towards the final goal. The sub-tasks are:
 
-- Move gribber towards the cube
-- Make gribber touch the cube
+- Move gripper towards the cube
+- Make gripper touch the cube
 - Move cube closer to the top of the pole
 - Let go of cube on target, and check if it stays on target for at least 15 timesteps
 
@@ -114,7 +114,7 @@ We work with a dense reward function, such that reward is given for each timeste
 
 ***State Representation***
 
-The state is represented by a high-level description of the environment. It is described by the global 3D position of the box and robot arm, and a boolean indicating whether the gribber is closed or open. Formally, we have:
+The state is represented by a high-level description of the environment. It is described by the global 3D position of the box and robot arm, and a boolean indicating whether the gripper is closed or open. Formally, we have:
 
 $$
 s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, gripper_\text{closed})
