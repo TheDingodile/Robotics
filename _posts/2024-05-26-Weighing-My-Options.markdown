@@ -90,11 +90,11 @@ Here is an image from the simulation.
     <p style="font-style: italic; font-size: 0.8em;">Initial state of the environment. The goal is for the robot arm to grab the green cube, and put in on top of the black pole such that the cube is balanced.</p>
 </div>
 
-Here is an animation of the robot in action:
+Here is a (failure case) trajectory from the simulation:
 
 <div id="fig1" style="text-align: center;">
     <img src="robot_gif.gif" alt="Robot GIF" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">Figure 1: This is an animated GIF of a robot.</p>
+    <p style="font-style: italic; font-size: 0.8em;">Robot in action.</p>
 </div>
 
 The pole is designed to be exactly half the width of the cube, which means by placing the cube on the pole without considering the COM, the cube will fall off three out of four times.
