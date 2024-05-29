@@ -188,9 +188,14 @@ Below is a visualisation of the network architecture.
 
 **Experiments**
 
+<div id="baseline" style="text-align: center;">
+    <img src="baseline.png" alt="baseline" width="600">
+    <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
+</div>
+
 **Results**
 
-it went well (i hope)
+The results shows that the baseline is able to successfully balance the cube sometimes, as shown in [this figure](#baseline).
 
 **Limitations and Future Work**
 
