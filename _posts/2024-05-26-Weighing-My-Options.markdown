@@ -117,7 +117,7 @@ We work with a dense reward function, such that reward is given for each timeste
 The state is represented by a high-level description of the environment. It is described by the global 3D position of the box and robot arm, and a boolean indicating whether the gribber is closed or open. Formally, we have:
 
 $$
-s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, \text{gripper_\text{closed}})
+s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, gripper_\text{closed})
 $$
 
 
@@ -146,6 +146,8 @@ a = (x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}})
 $$
 
 An under-the-hood control system is used to convert these actions into the robot arm's movements. Using this approach, the agent can focus on learning the high-level task of balancing the cube on the pole, rather than the low-level control of the robot arm.
+
+In addition, operation of the gripper is automated and based on the proximity of the gripper to the cube.
 
 
 
