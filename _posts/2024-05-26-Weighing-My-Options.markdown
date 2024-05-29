@@ -202,7 +202,7 @@ Below is a visualisation of the network architecture.
 First we run a baseline model, that is a simple MLP network with a policy head and a value head. This is to get a sense of the difficulty of the task, and to have a comparison point for our two approaches.
 
 <div id="baseline" style="text-align: center;">
-    <img src="baseline.png" alt="baseline" width="600">
+    <img src="baseline.png" alt="baseline" width="520">
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
 </div>
 
@@ -212,7 +212,7 @@ First we run a baseline model, that is a simple MLP network with a policy head a
 </div>
 
 <div id="subtasks" style="text-align: center;">
-    <img src="subtasks.png" alt="baseline" width="600">
+    <img src="subtasks.png" alt="baseline" width="570">
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance</p>
 </div>
 
