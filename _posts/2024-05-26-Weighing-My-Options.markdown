@@ -93,7 +93,7 @@ Here is an image from the simulation.
 Here is an animation of the robot in action:
 
 <div id="fig1" style="text-align: center;">
-    <img src="robot_gif.gif" alt="Robot GIF" width="800">
+    <img src="robot_gif.gif" alt="Robot GIF" width="300">
     <p style="font-style: italic; font-size: 0.8em;">Figure 1: This is an animated GIF of a robot.</p>
 </div>
 
@@ -101,22 +101,23 @@ The pole is designed to be exactly half the width of the cube, which means by pl
 
 ***Reward engineering***
 
-MyGym comes with defaults reward functions which are designed to speed up training. In addition, we split the task into sub-tasks to guide the agent towards the final goal. The sub-tasks are:
+MyGym comes with defaults reward functions which are designed to speed up training. We use these default reward schemes, and add some customization. We split the task into sub-tasks to guide the agent towards the final goal. The sub-tasks are:
 
-- Grasp the cube
-- Lift the cube
-- Drop the cube on the ground (we explain this sub-task later)
-- Drop the cube on the pole
-- Balance the cube on the pole
+- Move gribber towards the cube
+- Make gribber touch the cube
+- Move cube closer to the top of the pole
+- Let go of cube on target, and check if it stays on target for at least 15 timesteps
 
-**(check if this is correct)**
+We work with a dense reward function, such that reward is given for each timestep depending on the proximity to the target.
+
+<!-- - Drop the cube on the ground (we explain this sub-task later) -->
 
 ***State Representation***
 
-The state is represented by a high-level description of the environment. It is described by the global 3D position and velocity of the box and robot arm **(check if this is correct)**. Formally, we have:
+The state is represented by a high-level description of the environment. It is described by the global 3D position of the box and robot arm, and a boolean indicating whether the gribber is closed or open. Formally, we have:
 
 $$
-s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, v_{x_{\text{box}}}, v_{y_{\text{box}}}, v_{z_{\text{box}}}, v_{x_{\text{arm}}}, v_{y_{\text{arm}}}, v_{z_{\text{arm}}})
+s = (x_{\text{box}}, y_{\text{box}}, z_{\text{box}}, x_{\text{arm}}, y_{\text{arm}}, z_{\text{arm}}, \text{gripper\_closed})
 $$
 
 
