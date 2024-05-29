@@ -193,7 +193,7 @@ For the special (lift and drop) sub-task, when the COM network has not made a pr
 Below is a visualisation of the network architecture.
 
 <div style="text-align: center;">
-    <img src="Dual-Network.png" alt="The Cube" width="800">
+    <img src="Dual-Network_new.png" alt="The Cube" width="800">
     <p style="font-style: italic; font-size: 0.8em;">The network architecture of the Dual-network approach. The COM-head outputs a 3-dimensional vector which is concatinated to the state and given to the actor-critic network.</p>
 </div>
 
