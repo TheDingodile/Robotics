@@ -254,7 +254,7 @@ This plot demonstrate that training the COM network is still ongoing, and that t
 
 **Discussion**
 
-The results shows that the baseline is able to learn a meaningful policy and even balance the cube succesfully occassionally, as shown in [this figure](#baseline). Surprisingly, our first approach did not perform better than the baseline, as was shown [here](#LSTM), however our second approach, demonstrated improved data-efficiency and performance as was shown [here](#DualNet). We speculate that the extra complexity added to the architecture by using the BackBone LSTM might have made the training less data-efficient, which means we would have to train longer. On the other hand, the Dual-network structure is more data-efficient, and is able to learn the task faster and possible better, but since we only trained for 300000 steps, we can't say for sure. Due to compute and time constraints, we were not able to test this hypothesis, but it is a direction for future work.
+The results indicate that the baseline can learn a meaningful policy and occasionally balance the cube successfully, as shown in [this figure](#baseline). Surprisingly, our first approach did not outperform the baseline, as shown [here](#LSTM). However, our second approach demonstrated improved data efficiency and performance, as shown [here](#DualNet). We speculate that the added complexity of the BackBone LSTM architecture reduced data efficiency, requiring longer training times. Conversely, the Dual-network structure proved more data-efficient, learning the task faster and possibly better. However, with only 300,000 training steps, we cannot confirm this conclusively. Due to compute and time constraints, we could not test this hypothesis further, but it remains a direction for future research.
 
 **Limitations and Future Work**
 
@@ -282,7 +282,7 @@ Our work has several limitations and directions for future research:
 
 **Conclusion**
 
-In this project we explored two methods for enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's center of mass (COM). Our experiments showed that our first approach of using a LSTM and adding a COM head to the network  did not outperform the baseline model of simply using a feedforward neural network with no history or other way to access the COM. We speculate that this is due to the added complexity of the COM prediction network, which may have made training less data-efficient. Our second approach of using a dual-network structure, where we predict the COM and feed it to the policy network, showed improved data-efficiency and performance. Future work should focus on training our methods for longer times, and evaluate our methods in more complex environments to assess their robustness and scalability.
+In this project, we explored two methods to enhance robotic grasping and carrying by using existing sensors to determine an object's center of mass (COM). Our experiments revealed that the first approach, using an LSTM with a COM head, did not outperform the baseline model, which used a simple feedforward neural network. We believe the added complexity of the COM prediction network reduced data efficiency during training. However, our second approach, a dual-network structure that predicts the COM and feeds it to the policy network, showed better data efficiency and performance. Future work should focus on longer training times and evaluating these methods in more complex environments to test their robustness and scalability.
 
 **References**
 
