@@ -237,7 +237,7 @@ On this plot we see that the subtask completion grows faster than that of the ba
 Here, we see the reward of the four different sub-tasks as training goes on.
 
 <div id="subtasks_new" style="text-align: center;">
-    <img src="subtasks_new2.png" alt="baseline" width="300">
+    <img src="subtasks_new3.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
 </div>
 
