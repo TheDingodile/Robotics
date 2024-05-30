@@ -221,17 +221,25 @@ The approach fails to learn almost anything, and is significantly worse than the
 
 ***Results: Approach 2***
 
+Lastly, we show the performance for the second approach, the Dual-network structure.
+
+<div id="DualNet" style="text-align: center;">
+    <img src="DualNet.png" alt="baseline" width="600">
+    <p style="font-style: italic; font-size: 0.8em;">Approach 2: Dual-network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is better than that of the baseline model (even though it is training for fewer time-steps).</p>
+</div>
+
+
 Here, we see the reward of the four different sub-tasks as training goes on.
 
-<div id="subtasks" style="text-align: center;">
-    <img src="subtasks.png" alt="baseline" width="300">
+<div id="subtasks_new" style="text-align: center;">
+    <img src="subtasks_new.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
 </div>
 
 This plot shows how the loss of the COM prediction network decreases as training goes on.
 
-<div id="loss" style="text-align: center;">
-    <img src="loses.png" alt="baseline" width="600">
+<div id="loss_new" style="text-align: center;">
+    <img src="loses_new.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">The loss of the COM network. We see the loss is still falling significantly when we stop training.</p>
 </div>
 
