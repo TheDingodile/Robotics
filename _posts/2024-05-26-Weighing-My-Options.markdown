@@ -204,7 +204,7 @@ Below is a visualisation of the network architecture.
 First we run a baseline model, that is a simple MLP network with a policy head and a value head. This is to get a sense of the difficulty of the task, and to have a comparison point for our two approaches.
 
 <div id="baseline" style="text-align: center;">
-    <img src="baseline_new2.png" alt="baseline" width="520">
+    <img src="baseline_new2.png" alt="baseline" width="400">
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. </p>
 </div>
 
