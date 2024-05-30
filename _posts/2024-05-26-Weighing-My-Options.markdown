@@ -237,7 +237,7 @@ On this plot we see that the subtask completion grows faster than that of the ba
 Here, we see the reward of the four different sub-tasks as training goes on.
 
 <div id="subtasks_new" style="text-align: center;">
-    <img src="subtasks_new.png" alt="baseline" width="300">
+    <img src="subtasks_new2.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
 </div>
 
@@ -246,7 +246,7 @@ For this approach we see that after only around 300000 steps it looks like the a
 Finally, we also have a plot that shows how the loss of the COM prediction network decreases as training goes on.
 
 <div id="loss_new" style="text-align: center;">
-    <img src="loses_new.png" alt="baseline" width="600">
+    <img src="loses_new2.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">The loss of the COM network. We see the loss is still falling significantly when we stop training.</p>
 </div>
 
