@@ -205,7 +205,7 @@ First we run a baseline model, that is a simple MLP network with a policy head a
 
 <div id="baseline" style="text-align: center;">
     <img src="baseline_new3.png" alt="baseline" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">Baseline performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. </p>
+    <p style="font-style: italic; font-size: 0.8em;">Baseline performance. Plot shows how many sub-tasks the policy completes on average. </p>
 </div>
 
 ***Results: Approach 1***
@@ -214,7 +214,7 @@ Next, we show the performance for first approach, the Backbone network.
 
 <div id="LSTM" style="text-align: center;">
     <img src="LSTM_new2.png" alt="baseline" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is significantly worse than that of the baseline model.</p>
+    <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance. Plot shows how many sub-tasks the policy completes on average. We see the performance is significantly worse than that of the baseline model.</p>
 </div>
 
 The approach fails to learn almost anything, and is significantly worse than the baseline model.
@@ -225,10 +225,10 @@ Lastly, we show the performance for the second approach, the Dual-network struct
 
 <div id="DualNet" style="text-align: center;">
     <img src="DualNet2_new.png" alt="baseline" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">Approach 2: Dual-network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is better than that of the baseline model (even though it is training for fewer time-steps).</p>
+    <p style="font-style: italic; font-size: 0.8em;">Approach 2: Dual-network performance. Plot shows how many sub-tasks the policy completes on average. We see the performance is better than that of the baseline model (even though it is given  fewer time-steps to train).</p>
 </div>
 
-On this plot we see that the subtask completion grows faster than that of the baseline. 
+On this plot we see that the subtask completion grows faster than that of the baseline.
 
 <!-- However, at the same time, the mean reward is much lower. The reasoning for this low mean reward is because the reward functions are different, so the mean reward is not directly comparable, and thus the subtask completion is a better measure of performance. -->
 
@@ -238,7 +238,7 @@ Here, we see the reward of the four different sub-tasks as training goes on.
 
 <div id="subtasks_new" style="text-align: center;">
     <img src="subtasks_new2.png" alt="baseline" width="300">
-    <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
+    <p style="font-style: italic; font-size: 0.8em;">The rewards of the four sub-tasks for Approach 2. We see by the end the final sub-task "place" is getting reached and reward is obtained. </p>
 </div>
 
 For this approach we see that after only around 300000 steps it looks like the agent starts to get meaningful reward of the last sub-task place (which is the balancing task). This is a good sign, and indicates that the agent is reaching this sub-task often.
