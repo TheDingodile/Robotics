@@ -204,7 +204,7 @@ Below is a visualisation of the network architecture.
 First we run a baseline model, that is a simple MLP network with a policy head and a value head. This is to get a sense of the difficulty of the task, and to have a comparison point for our two approaches.
 
 <div id="baseline" style="text-align: center;">
-    <img src="baseline_new2.png" alt="baseline" width="400">
+    <img src="baseline_new3.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">Baseline performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. </p>
 </div>
 
@@ -213,7 +213,7 @@ First we run a baseline model, that is a simple MLP network with a policy head a
 Next, we show the performance for first approach, the Backbone network.
 
 <div id="LSTM" style="text-align: center;">
-    <img src="LSTM_new.png" alt="baseline" width="600">
+    <img src="LSTM_new2.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">Approach 1: Backbone network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is significantly worse than that of the baseline model.</p>
 </div>
 
@@ -224,7 +224,7 @@ The approach fails to learn almost anything, and is significantly worse than the
 Lastly, we show the performance for the second approach, the Dual-network structure.
 
 <div id="DualNet" style="text-align: center;">
-    <img src="DualNet2.png" alt="baseline" width="600">
+    <img src="DualNet2_new.png" alt="baseline" width="300">
     <p style="font-style: italic; font-size: 0.8em;">Approach 2: Dual-network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is better than that of the baseline model (even though it is training for fewer time-steps).</p>
 </div>
 
