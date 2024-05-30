@@ -228,6 +228,9 @@ Lastly, we show the performance for the second approach, the Dual-network struct
     <p style="font-style: italic; font-size: 0.8em;">Approach 2: Dual-network performance. Left plot shows mean reward, which can be used as a relative measure of performance. Right plot shows how many sub-tasks the policy completes on average. We see the performance is better than that of the baseline model (even though it is training for fewer time-steps).</p>
 </div>
 
+On this plot we see that the subtask completion grows faster than that of the baseline. However, at the same time, the mean reward is much lower. The reasoning for this low mean reward is because the reward functions are different, so the mean reward is not directly comparable, and thus the subtask completion is a better measure of performance.
+
+
 
 Here, we see the reward of the four different sub-tasks as training goes on.
 
@@ -236,16 +239,20 @@ Here, we see the reward of the four different sub-tasks as training goes on.
     <p style="font-style: italic; font-size: 0.8em;">The succesrate of the four sub-tasks for Approach 2</p>
 </div>
 
-This plot shows how the loss of the COM prediction network decreases as training goes on.
+For this approach we see that after only around 300000 steps it looks like the agent starts to get meaningful reward of the last sub-task place (which is the balancing task). This is a good sign, and indicates that the agent is reaching this sub-task often.
+
+Finally, we also have a plot that shows how the loss of the COM prediction network decreases as training goes on.
 
 <div id="loss_new" style="text-align: center;">
     <img src="loses_new.png" alt="baseline" width="600">
     <p style="font-style: italic; font-size: 0.8em;">The loss of the COM network. We see the loss is still falling significantly when we stop training.</p>
 </div>
 
+This plot demonstrate that training the COM network is still ongoing, and that the network is still learning to predict the COM when we stop training.
+
 **Discussion**
 
-The results shows that the baseline is able to learn a meaningful policy and even balance the cube succesfully occassionally, as shown in [this figure](#baseline). Surprisingly, our two approaches did not perform better than the baseline, as was shown [here](#LSTM) and [here](#subtasks). We speculate that the extra complexity added to the architecture by the COM prediction network might have made the training less data-efficient, which means we would have to train longer. Unfortunately, due to compute and time constraints, we were not able to test this hypothesis.
+The results shows that the baseline is able to learn a meaningful policy and even balance the cube succesfully occassionally, as shown in [this figure](#baseline). Surprisingly, our first approach did not perform better than the baseline, as was shown [here](#DualNet), however our second approach, demonstrated improved data-efficiency and performance as was shown [here](#subtasks). We speculate that the extra complexity added to the architecture by using the BackBone LSTM might have made the training less data-efficient, which means we would have to train longer. On the other hand, the Dual-network structure is more data-efficient, and is able to learn the task faster and possible better, but since we only trained for 300000 steps, we can't say for sure. Due to compute and time constraints, we were not able to test this hypothesis, but it is a direction for future work.
 
 **Limitations and Future Work**
 
@@ -273,7 +280,7 @@ Our work has several limitations and directions for future research:
 
 **Conclusion**
 
-In this project we explored two methods for enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's center of mass (COM). Our experiments showed that the proposed methods did not outperform the baseline model of simply using a feedforward neural network with no history or other way to access the COM. We speculate that this is due to the added complexity of the COM prediction network, which may have made training less data-efficient. Future work should focus on addressing this limitation and evaluating our methods in more complex environments to assess their robustness and scalability.
+In this project we explored two methods for enhancing robotic grasping and carrying abilities by leveraging existing sensors to gather information about an object's center of mass (COM). Our experiments showed that our first approach of using a LSTM and adding a COM head to the network  did not outperform the baseline model of simply using a feedforward neural network with no history or other way to access the COM. We speculate that this is due to the added complexity of the COM prediction network, which may have made training less data-efficient. Our second approach of using a dual-network structure, where we predict the COM and feed it to the policy network, showed improved data-efficiency and performance. Future work should focus on training our methods for longer times, and evaluate our methods in more complex environments to assess their robustness and scalability.
 
 **References**
 
